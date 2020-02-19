@@ -4,6 +4,7 @@ import org.json.JSONObject
 
 class Player {
     fun betRequest(game_state: JSONObject): Int {
+        print(game_state)
         return 0
     }
 
