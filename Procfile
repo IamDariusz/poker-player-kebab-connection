@@ -1,1 +1,1 @@
-web: ./build/install/poker-player-kebab-connection/bin/poker-player-kebab-connection
+web: ./build/install/poker-player-kotlin/bin/poker-player-kebab-connection
