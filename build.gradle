@@ -25,7 +25,7 @@ dependencies {
   compile 'org.json:json:20141113'
 }
 
-mainClassName = 'poker.PokerPackage'
+mainClassName = 'poker.PlayerServiceKt'
 
 task wrapper(type: Wrapper) {
   gradleVersion = '2.2'
