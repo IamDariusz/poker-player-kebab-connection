@@ -22,6 +22,15 @@ class Player:
             if player["name"] == "Kebab Connection":
                 return player
 
+    def have_pair(self, game_state):
+        me = self.get_me(game_state)
+        card1 = me["hole_cards"][0]["rank"]
+        card2 = me["hole_cards"][1]["rank"]
+        if card1 == card2:
+            return True
+        else:
+            return False
+
     def get_ranking(self, game_state):
         me = self.get_me(game_state)
         card1 = me["hole_cards"][0]["rank"]
@@ -35,11 +44,11 @@ class Player:
             if card1 == card2 and card1 > 6:
                 ranking = 0.5
 
-        if card1 == card2 and card1 == "9":
-            ranking = 0.6
-
-        if card1 == card2 and card1 == "T":
-            ranking = 0.66
+        if self.have_pair(game_state):
+            if card1 == "9":
+                ranking = 0.6
+            if card1 == "T":
+                ranking = 0.66
 
         list1 = ["A", "Q", "K", "J", "T"]
         if card1 in list1 and card2 in list1:
