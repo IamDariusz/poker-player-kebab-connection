@@ -1,1 +1,1 @@
-web: ./build/install/poker-player-kebab-connection/bin/poker-player-kebab-connection
+web: python player_service.py
