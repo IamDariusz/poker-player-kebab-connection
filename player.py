@@ -1,7 +1,7 @@
 import json
 
 class Player:
-    VERSION = "Kebab Maestro 0.20"
+    VERSION = "Kebab Maestro 0.21"
 
     def check_how_many_active(self, game_state):
         count = 0
@@ -21,9 +21,18 @@ class Player:
         for player in game_state["players"]:
             if player["name"] == "Kebab Connection":
                 if self.check_how_many_active(game_state) > 1:
-                    return player["stack"]/2
+                    if player["stack"] < 200:
+                        if game_state["current_buy_in"] < 50:
+                            return 50
+                        else:
+                            return 0
+                    else:
+                        return player["stack"]/2
                 else:
-                    return (self.get_first_non_kebab_active_player(game_state)["stack"])/2
+                    if player["stack"] < 200:
+                        return (self.get_first_non_kebab_active_player(game_state)["stack"])
+                    else:
+                        return (self.get_first_non_kebab_active_player(game_state)["stack"])/2
             else:
                 continue
 
