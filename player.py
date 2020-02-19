@@ -55,6 +55,19 @@ class Player:
             ranking = 1
 
         return ranking
+    
+    def get_river_rank(self, game_state):
+        me = self.get_me(game_state)
+        river_card1 = me["community_cards"][0]["rank"]
+        river_card2 = me["community_cards"][1]["rank"]
+        river_card3 = me["community_cards"][2]["rank"]
+
+        river_list_rank = []
+        river_list_rank.append(river_card1)
+        river_list_rank.append(river_card2)
+        river_list_rank.append(river_card3)
+
+        return river_list_rank
 
     def betRequest(self, game_state):
         me = self.get_me(game_state)
