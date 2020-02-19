@@ -1,7 +1,7 @@
 import json
 
 class Player:
-    VERSION = "Kebab Maestro 0.18"
+    VERSION = "Kebab Maestro 0.20"
 
     def check_how_many_active(self, game_state):
         count = 0
