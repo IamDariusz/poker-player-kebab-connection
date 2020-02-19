@@ -41,7 +41,7 @@ class Player:
         if card1 == card2 and card1 == "T":
             ranking = 0.66
 
-        list1 = ["A", "Q", "K", "J"]
+        list1 = ["A", "Q", "K", "J", "T"]
         if card1 in list1 and card2 in list1:
             ranking = 1
 
