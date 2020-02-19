@@ -1,7 +1,7 @@
 import json
 
 class Player:
-    VERSION = "Kebab Mestro 0.17"
+    VERSION = "Kebab Maestro 0.18"
 
     def betRequest(self, game_state):
         for player in game_state["players"]:
